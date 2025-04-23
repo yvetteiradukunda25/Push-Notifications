@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
  //Email
         NotificationService email = new EmailNotification("iradyvette98@gmail.com");
-        email.sendNotification("You Made it Here");
+        email.sendNotification("Email well received");
 
         //SMS
 
