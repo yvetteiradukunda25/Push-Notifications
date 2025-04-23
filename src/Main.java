@@ -2,7 +2,8 @@ public class Main {
     public static void main(String[] args) {
  //Email
         NotificationService email = new EmailNotification("iradyvette98@gmail.com");
-        email.sendNotification("Email well received");
+        //try to write an email with no '@'
+        email.sendNotification("Message well received");
 
         //SMS
 

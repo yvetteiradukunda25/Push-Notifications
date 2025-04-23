@@ -17,10 +17,16 @@ public class PushNotification implements NotificationService {
 }
 
      class EmailNotification implements NotificationService {
+
           String emailAddress;
 
         public EmailNotification(String emailAddress) {
+
+                if (!emailAddress.contains("@")) {
+                throw new IllegalArgumentException("Invalid email format");
+            }
             this.emailAddress = emailAddress;
+
 
 
         }
