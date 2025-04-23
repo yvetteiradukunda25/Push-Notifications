@@ -7,7 +7,7 @@ public class PushNotification implements NotificationService {
 
     @Override
     public void sendNotification(String message) {
-        System.out.println(deviceId + message);
+        System.out.println(deviceId + " " + message);
     }
 
     @Override
@@ -21,13 +21,15 @@ public class PushNotification implements NotificationService {
           String emailAddress;
 
         public EmailNotification(String emailAddress) {
+             try {
+                 if (!emailAddress.contains("@")) {
+                     throw new IllegalArgumentException("Invalid email format");
+                 }
+                 this.emailAddress = emailAddress;
 
-                if (!emailAddress.contains("@")) {
-                throw new IllegalArgumentException("Invalid email format");
-            }
-            this.emailAddress = emailAddress;
-
-
+             } catch (IllegalArgumentException e) {
+                 System.out.println("error:" + e.getMessage());
+             }
 
         }
         @Override
