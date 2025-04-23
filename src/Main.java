@@ -1,5 +1,18 @@
 public class Main {
     public static void main(String[] args) {
+ //Email
+        NotificationService email = new EmailNotification("iradyvette98@gmail.com");
+        email.sendNotification("You Made it Here");
+
+        //SMS
+
+        NotificationService sms = new SMSNotification();
+        sms.sendNotification("Verification code is ...");
+
+        // Push Notification with device ID
+        NotificationService push = new PushNotification("device-005");
+        push.sendNotification("Push Notification");
+        push.setDefaultPriority("High");
 
     }
 }
